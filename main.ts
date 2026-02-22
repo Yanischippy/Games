@@ -188,7 +188,7 @@ apple1.setPosition(randint(0, 200), 0)
 strawberry1.setPosition(randint(0, 200), 0)
 forever(function () {
     chicken1.setVelocity(15, 70)
-    pizza1.setVelocity(15, 100)
+    pizza1.setVelocity(-15, 100)
     steak1.setVelocity(15, 50)
     cherrys1.setVelocity(30, 30)
     apple1.setVelocity(50, 50)
