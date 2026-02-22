@@ -44,7 +44,9 @@ info.onLifeZero(function () {
 let rparrow: Sprite = null
 let lparrow: Sprite = null
 let arrowtoggle = 0
+let ball1: Sprite = null
 game.setGameOverMessage(false, "Food hurt you!")
+controller.moveSprite(ball1)
 info.setLife(10)
 // Toggle "On"
 arrowtoggle = 1
@@ -68,7 +70,7 @@ lparrow = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Misc)
 rparrow = sprites.create(assets.image`myImage0`, SpriteKind.Misc)
-let ball1 = sprites.create(assets.image`myImage1`, SpriteKind.Player)
+ball1 = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 let chicken1 = sprites.create(img`
     . . 2 2 b b b b b . . . . . . . 
     . 2 b 4 4 4 4 4 4 b . . . . . . 
@@ -177,7 +179,6 @@ forever(function () {
     steak1.setPosition(randint(0, 200), 0)
     cherrys1.setPosition(randint(0, 200), 0)
     apple1.setPosition(randint(0, 200), 0)
-    controller.moveSprite(ball1)
 })
 forever(function () {
     lparrow.setPosition(10, 60)
