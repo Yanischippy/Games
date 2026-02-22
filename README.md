@@ -1,4 +1,5 @@
  For kitronick arcade
+ Linl:https://arcade.makecode.com/S37068-04862-65729-02020
 
 
 > Open this page at [https://yanischippy.github.io/games/](https://yanischippy.github.io/games/)
