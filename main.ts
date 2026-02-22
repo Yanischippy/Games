@@ -232,4 +232,8 @@ forever(function () {
         info.changeLifeBy(-1)
         game.setGameOverMessage(false, "Apple hurt you")
     }
+    if (ball1.overlapsWith(strawberry1)) {
+        info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Strawberry hurt you")
+    }
 })
