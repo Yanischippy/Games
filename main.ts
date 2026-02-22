@@ -180,11 +180,6 @@ forever(function () {
     controller.moveSprite(ball1)
 })
 forever(function () {
-    if (ball1.overlapsWith(chicken1)) {
-        info.changeLifeBy(-1)
-    }
-})
-forever(function () {
     lparrow.setPosition(10, 60)
     pause(200)
     rparrow.setPosition(150, 60)
@@ -192,4 +187,21 @@ forever(function () {
     lparrow.setPosition(10, 59)
     pause(200)
     rparrow.setPosition(150, 59)
+})
+forever(function () {
+    if (ball1.overlapsWith(chicken1)) {
+        info.changeLifeBy(-1)
+    }
+    if (ball1.overlapsWith(steak1)) {
+        info.changeLifeBy(-1)
+    }
+    if (ball1.overlapsWith(cherrys1)) {
+        info.changeLifeBy(-1)
+    }
+    if (ball1.overlapsWith(pizza1)) {
+        info.changeLifeBy(-1)
+    }
+    if (ball1.overlapsWith(apple1)) {
+        info.changeLifeBy(-1)
+    }
 })
