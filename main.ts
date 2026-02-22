@@ -38,13 +38,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 info.onLifeZero(function () {
+    game.setGameOverScoringType(game.ScoringType.HighScore)
     game.gameOver(false)
 })
 // When turned on.
 let rparrow: Sprite = null
 let lparrow: Sprite = null
 let arrowtoggle = 0
-game.setGameOverMessage(false, "Food hurt you!")
+info.setScore(0)
 let ball1 = sprites.create(assets.image`myImage1`, SpriteKind.Player)
 controller.moveSprite(ball1)
 info.setLife(30)
@@ -160,24 +161,46 @@ let apple1 = sprites.create(img`
     . . . 2 2 e e 4 4 4 2 e e . . . 
     . . . . . 2 2 e e e e . . . . . 
     `, SpriteKind.Projectile)
+let strawberry1 = sprites.create(img`
+    . . . . . . . 6 . . . . . . . . 
+    . . . . . . 8 6 6 . . . 6 8 . . 
+    . . . e e e 8 8 6 6 . 6 7 8 . . 
+    . . e 2 2 2 2 e 8 6 6 7 6 . . . 
+    . e 2 2 4 4 2 7 7 7 7 7 8 6 . . 
+    . e 2 4 4 2 6 7 7 7 6 7 6 8 8 . 
+    e 2 4 5 2 2 6 7 7 6 2 7 7 6 . . 
+    e 2 4 4 2 2 6 7 6 2 2 6 7 7 6 . 
+    e 2 4 2 2 2 6 6 2 2 2 e 7 7 6 . 
+    e 2 4 2 2 4 2 2 2 4 2 2 e 7 6 . 
+    e 2 4 2 2 2 2 2 2 2 2 2 e c 6 . 
+    e 2 2 2 2 2 2 2 4 e 2 e e c . . 
+    e e 2 e 2 2 4 2 2 e e e c . . . 
+    e e e e 2 e 2 2 e e e c . . . . 
+    e e e 2 e e c e c c c . . . . . 
+    . c c c c c c c . . . . . . . . 
+    `, SpriteKind.Projectile)
 ball1.setStayInScreen(true)
 chicken1.setPosition(randint(0, 200), 0)
 pizza1.setPosition(randint(0, 200), 0)
 steak1.setPosition(randint(0, 200), 0)
 cherrys1.setPosition(randint(0, 200), 0)
 apple1.setPosition(randint(0, 200), 0)
+strawberry1.setPosition(randint(0, 200), 0)
 forever(function () {
     chicken1.setVelocity(15, 70)
     pizza1.setVelocity(15, 100)
     steak1.setVelocity(15, 50)
     cherrys1.setVelocity(30, 30)
     apple1.setVelocity(50, 50)
+    strawberry1.setVelocity(0, 150)
     pause(2500)
+    info.changeScoreBy(1)
     chicken1.setPosition(randint(0, 200), 0)
     pizza1.setPosition(randint(0, 200), 0)
     steak1.setPosition(randint(0, 200), 0)
     cherrys1.setPosition(randint(0, 200), 0)
     apple1.setPosition(randint(0, 200), 0)
+    strawberry1.setPosition(randint(0, 200), 0)
 })
 forever(function () {
     lparrow.setPosition(10, 60)
@@ -191,17 +214,22 @@ forever(function () {
 forever(function () {
     if (ball1.overlapsWith(chicken1)) {
         info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Chicken hurt you")
     }
     if (ball1.overlapsWith(steak1)) {
         info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Steak hurt you")
     }
     if (ball1.overlapsWith(cherrys1)) {
         info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Cherry hurt you")
     }
     if (ball1.overlapsWith(pizza1)) {
         info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Pizza hurt you")
     }
     if (ball1.overlapsWith(apple1)) {
         info.changeLifeBy(-1)
+        game.setGameOverMessage(false, "Apple hurt you")
     }
 })
