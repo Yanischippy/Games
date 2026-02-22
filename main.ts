@@ -47,7 +47,7 @@ let arrowtoggle = 0
 let ball1: Sprite = null
 game.setGameOverMessage(false, "Food hurt you!")
 controller.moveSprite(ball1)
-info.setLife(10)
+info.setLife(30)
 // Toggle "On"
 arrowtoggle = 1
 // All under this comment is Sprites.
