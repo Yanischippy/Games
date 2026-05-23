@@ -1,6 +1,6 @@
 {
     "name": "Fruit hurt ):",
-    "version": "1.4.0",
+    "version": "2.0.0",
     "description": "Games",
     "dependencies": {
         "device": "*"
@@ -26,5 +26,5 @@
         "arcade"
     ],
     "preferredEditor": "blocksprj",
-    "assetPack": false
+    "assetPack": true
 }
